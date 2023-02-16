@@ -171,6 +171,15 @@ main section div {
   /* transform: scale(20); */
 }
 
+main > section:nth-of-type(even) > div {
+  width: 12px;
+  aspect-ratio: 1/1;
+  background-color: var(--bg-color-green-dark);
+  border-radius: 50%;
+  box-shadow: var(--screw-shadow-dark), var(--screw-shadow-light);
+  /* transform: scale(20); */
+}
+
 /* rotate button */
 main section input[type='checkbox'] {
   display: none;
