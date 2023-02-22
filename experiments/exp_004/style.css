@@ -1,0 +1,58 @@
+:root {
+  --swithPlate-bg: #c9c9c9;
+  --switch-bg: #eaeaea;
+  --switch-shadow: inset 0px 20px 1px grey;
+  --box-shadow: inset -4px -4px 4px #939393, inset 4px 4px 4px #f4f4f4;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: grey;
+}
+
+body > div {
+  width: 150px;
+  aspect-ratio: 1/2;
+  background-color: var(--swithPlate-bg);
+  box-shadow: var(--box-shadow);
+  border-radius: 5px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 100px;
+  perspective-origin: left;
+}
+
+/* SWITCH */
+input[type='checkbox'] {
+  display: none;
+}
+
+div > label {
+  display: block;
+  width: 75px;
+  aspect-ratio: 1/2;
+  background-color: var(--switch-bg);
+  border: 2px solid grey;
+  border-radius: 5px;
+  box-shadow: var(--switch-shadow);
+  transform: rotate(0deg);
+  transition: transform 2s;
+}
+
+/* SWITCH */
+body:has(input[type='checkbox']:checked) > div > label {
+  transform: rotate(180deg);
+  transition: transform 2s;
+}
