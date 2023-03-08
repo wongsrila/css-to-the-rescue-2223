@@ -1,4 +1,5 @@
 # Modulair Bedieningspaneel
+![](https://raw.githubusercontent.com/wongsrila/modulair-bedieningspaneel/main/images/Screenshot%202023-03-08%20at%2022.45.35.png)
 
 ## Het vak
 
