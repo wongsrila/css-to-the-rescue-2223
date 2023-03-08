@@ -1,9 +1,13 @@
 # Modulair Bedieningspaneel
 
-## Week 1
+## Het vak
 
-Ik heb voor de opdracht 1 gekozen. Ik ga een modulaire bedieningspaneel maken. Ik ben geinspireerd door geluid synthesizers die gebruikt worden tijdens het produceren. Daarbij wil ik dus een realistische (skeuomorphism) bedieningspaneel gaan maken met shadows etc.
+In het vak CSS to the Rescue gaat het over het experiment. We willen dus dingen zien die we nog nooit hebben gezien. We willen dingen zien waarvan we niet wisten dat we ze konden maken met CSS. Dat betekent, uiteraard, dat je zelf gaat experimenteren, en dus niet code gaat kopiëren. Het is een experimenteel vak, en je mag met experimentele CSS features aan de slag die het nog niet in alle browsers doen. Browserverschillen doen er in dit vak niet toe.
 
-## Week 2
+## gekozen opdracht
 
-Deze week heb ik mij gefocused op het leren gebruiken van box shadows, en elementen positioneren op de juiste plekken. Mijn doel is om het realistisch uit te laten zien.
+1. Modulair bedieningspaneel
+
+## procesverslag 
+
+[Procesverslag](https://github.com/wongsrila/modulair-bedieningspaneel/wiki/Procesverslag)
