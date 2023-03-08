@@ -238,7 +238,7 @@ main section label input:nth-of-type(4) {
 }
 
 main:has(input:checked) section label::before {
-  transition: 1s;
+  transition: all 500ms cubic-bezier(1, 0, 1, 0); /* custom */
 }
 
 main:has(input[value='checkbox_1']:checked) section label::before {
@@ -291,19 +291,14 @@ main section label p:nth-of-type(4) {
 
 /* BUTTONS */
 
-/* body:has(input[value='checkbox_1']:checked) {
-  background-color: #444;
-  transition: 1s;
-} */
-
 body:has(input[value='checkbox_2']:checked) {
   background-color: #aaa;
-  transition: 1s;
+  transition: all 500ms cubic-bezier(1, 0, 1, 0); /* custom */
 }
 
 body:has(input[value='checkbox_3']:checked) {
   background-color: #dadada;
-  transition: 1s;
+  transition: all 500ms cubic-bezier(1, 0, 1, 0); /* custom */
 }
 
 /* SVG ANIMATION */
@@ -367,9 +362,25 @@ body:has(input[value='checkbox_3']:checked) {
 
 svg {
   position: absolute;
-  right: 20%;
+  right: 40%;
   top: 20%;
-  transition: all 500ms;
+  transition: all 00ms;
+}
+
+body:has(input[value='button']:checked) svg {
+  offset-path: path(
+    'M15.541,243.303C16.21,219.321 30.448,143.922 88.62,145.435C146.793,146.948 132.735,199.861 126.175,233.318C119.615,266.775 139.193,305.391 190.045,301.296C240.896,297.201 272.296,256.861 277.71,206.221C283.125,155.582 236.55,163.225 232.303,187.532C228.057,211.839 255.03,233.417 301.396,215.955C347.763,198.494 338.917,165.724 329.914,139.292C319.546,108.855 335.797,51.805 390.533,60.171C440.125,67.75 443.84,114.527 426.955,152.296C407.61,195.567 396.033,220.441 419.696,258.748C443.358,297.055 504.072,294.099 517.313,250.744C530.553,207.39 501.502,169.464 494.931,147.938C488.36,126.412 516.8,107.776 538.451,118.963C560.103,130.15 561.621,167.457 531.87,180.883'
+  );
+  animation: move 4000ms infinite alternate ease-in-out !important;
+}
+
+@keyframes move {
+  0% {
+    offset-distance: 0%;
+  }
+  100% {
+    offset-distance: 100%;
+  }
 }
 
 body:has(input[value='checkbox_1']:checked) #left_pupil,
@@ -395,4 +406,88 @@ body:has(input[value='checkbox_8']:checked) svg #mouth {
 
 svg {
   animation: move_juan 10s ease infinite;
+}
+
+[data-btnSection='1'] > div:first-of-type {
+  background-color: var(--bg-color-green-dark);
+}
+
+[data-btn='1'] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background-color: var(--bg-color);
+  box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.72), -20px -20px 50px #ffffff,
+    inset -4px -4px 4px rgba(118, 118, 118, 0.25),
+    inset 4px 4px 4px rgba(41, 41, 41, 0.25);
+}
+
+[data-btn='1'] div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.68);
+  z-index: 2;
+  box-shadow: none;
+}
+
+[data-btn='1'] div label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background-color: var(--bg-color);
+  z-index: 3;
+  box-shadow: inset -15px -15px 20px 2px rgba(173, 173, 173, 0.25),
+    inset 15px 15px 20px 5px rgba(62, 62, 62, 0.25),
+    inset -3px -3px 0px #cecece7c, inset 3px 3px 0px #ffffff;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
+[data-btn='1'] div label::before {
+  display: none;
+}
+
+main:has(input[value='button']:checked) section label {
+  box-shadow: inset -15px -15px 20px 2px rgba(173, 173, 173, 0.6),
+    inset 15px 15px 20px 5px rgba(42, 42, 42, 0.5), inset -1px -1px 0px #9b9b9b,
+    inset 1px 1px 0px #ffffff;
+  width: 77px;
+}
+
+main:has(input[value='button']:checked)
+  [data-btnSection='1']
+  > div:first-of-type {
+  background-color: var(--bg-color-green);
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+body:has(input[value='button']:checked) main,
+body:has(input[value='button']:checked) {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 0.5s ease infinite;
+  height: 100vh;
 }
